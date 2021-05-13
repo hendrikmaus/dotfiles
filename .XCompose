@@ -1,0 +1,11 @@
+# default are included via /usr/share/X11/locale/en_US.UTF-8/Compose
+include "%L"
+
+<Multi_key> <u> <u> : "ü"
+<Multi_key> <u> <U> : "Ü"
+<Multi_key> <o> <o> : "ö"
+<Multi_key> <o> <O> : "Ö"
+<Multi_key> <a> <a> : "ä"
+<Multi_key> <a> <A> : "Ä"
+<Multi_key> <s> <s> : "ß"
+
