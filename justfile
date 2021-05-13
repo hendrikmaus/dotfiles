@@ -5,6 +5,7 @@ set export
 default:
   @just --list
 
+# manage package list hook for pacman
 pkglist:
   #!/usr/bin/env bash
   set -euo pipefail

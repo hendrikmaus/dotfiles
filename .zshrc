@@ -196,6 +196,11 @@ alias gdc="git diff --cached"
 
 # Dotfiles Config
 alias cfg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias cfga='cfg add -p'
+alias cfgs='cfg status'
+alias cfgp='cfg push'
+alias cfgc='cfg commit'
+alias cfgd='cfg diff'
 
 # Kubernetes
 alias k='kubectl'
