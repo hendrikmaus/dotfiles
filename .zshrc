@@ -194,6 +194,9 @@ alias gc="git commit"
 alias gd="git diff"
 alias gdc="git diff --cached"
 
+# Dotfiles Config
+alias cfg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
 # Kubernetes
 alias k='kubectl'
 alias kgp='kubectl get pods'
