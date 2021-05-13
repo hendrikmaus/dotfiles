@@ -18,7 +18,7 @@ htop
 gron
 ipcalc
 jq
-yq
+go-yq
 just
 k9s
 kubectl
