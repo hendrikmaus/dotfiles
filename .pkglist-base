@@ -36,3 +36,6 @@ ttf-jetbrains-mono-git
 vivaldi
 zoxide
 zola
+zsh-autosuggestions
+zsh-completions
+zsh-syntax-highlighting
