@@ -19,6 +19,9 @@ configure:
 
 # install everything
 install:
+  #!/usr/bin/env bash
+  set -euo pipefail
+  sudo pacman-mirrors --geoip && sudo pacman -Syyu
   just install-base-packages
 
 # manage package list hook for pacman
