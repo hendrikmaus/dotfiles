@@ -29,7 +29,7 @@ _default-shell:
   set -euo pipefail
 
   if [[ "${SHELL}" != "/usr/bin/zsh" ]]; then
-    sudo chsh --shell /usr/bin/zsh
+    chsh --shell /usr/bin/zsh
     echo "Set the default shell to zsh"
   fi
 
