@@ -31,4 +31,8 @@ _default-shell:
   if [[ "${SHELL}" != "/usr/bin/zsh" ]]; then
     sudo chsh --shell /usr/bin/zsh
     echo "Set the default shell to zsh"
-  fi 
+  fi
+
+# install all base packages
+install-base-packages:
+  paru -S --needed $(sort $HOME/.pkglist-base)
