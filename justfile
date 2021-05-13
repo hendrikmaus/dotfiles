@@ -46,7 +46,7 @@ _ssh-agent:
   mkdir -p ~/.ssh
   [[ ! -f "~/.ssh/config" ]] && touch ~/.ssh/config
   chmod 600 ~/.ssh/config
-  if grep -qF "AddKeysToAgent" ~/.ssh/config; then
+  if ! grep -qF "AddKeysToAgent" ~/.ssh/config; then
     echo "AddKeysToAgent yes" >> ~/.ssh/config
   fi
 
