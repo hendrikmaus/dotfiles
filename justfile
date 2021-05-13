@@ -1,3 +1,5 @@
+# vim: set ft=make :
+
 # https://github.com/casey/just
 
 set export
