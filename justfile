@@ -14,6 +14,10 @@ configure:
   just _ssh-agent
   just _docker
 
+# install everything
+install:
+  just install-base-packages
+
 # manage package list hook for pacman
 _pkglist-hook:
   #!/usr/bin/env bash
