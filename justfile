@@ -1,8 +1,9 @@
 # https://github.com/casey/just
 
 set export
+set shell := ["bash", "-uc"]
 
-default:
+_default:
   @just --list
 
 # configure the system
@@ -11,6 +12,7 @@ configure:
   just _pkglist-hook
   just _default-shell
   just _ssh-agent
+  just _docker
 
 # manage package list hook for pacman
 _pkglist-hook:
@@ -49,6 +51,18 @@ _ssh-agent:
   if ! grep -qF "AddKeysToAgent" ~/.ssh/config; then
     echo "AddKeysToAgent yes" >> ~/.ssh/config
   fi
+
+# configure docker
+_docker:
+  #!/usr/bin/env bash
+  set -euo pipefail
+  sudo -v
+  if ! grep -qF "docker" /etc/group; then
+    sudo groupadd docker
+  fi
+  sudo usermod -aG docker $USER
+  sudo systemctl enable docker.service
+  sudo systemctl enable containerd.service
 
 # install all base packages
 install-base-packages:
