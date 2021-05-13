@@ -102,6 +102,7 @@ git
 github-cli
 glibc
 gnome-keyring
+go-yq
 goland-jre
 gopass
 gopass-jsonapi-bin
@@ -196,7 +197,6 @@ manjaro-release
 manjaro-settings-manager-notifier
 manjaro-system
 manjaro-zsh-config
-markdown_previewer
 matcha-gtk-theme
 mdadm
 memtest86+
@@ -253,10 +253,8 @@ perl
 perl-file-mimeinfo
 pkgconf
 pm-utils
-polkit-gnome
 poppler-data
 postgresql-libs
-povray
 powertop
 procps-ng
 psmisc
