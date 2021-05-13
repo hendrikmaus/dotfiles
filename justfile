@@ -13,6 +13,7 @@ configure:
   just _default-shell
   just _ssh-agent
   just _docker
+  just _git
 
 # install everything
 install:
@@ -61,12 +62,22 @@ _docker:
   #!/usr/bin/env bash
   set -euo pipefail
   sudo -v
+  # see https://docs.docker.com/engine/install/linux-postinstall/
   if ! grep -qF "docker" /etc/group; then
     sudo groupadd docker
   fi
   sudo usermod -aG docker $USER
   sudo systemctl enable docker.service
   sudo systemctl enable containerd.service
+
+# git config
+_git:
+  #!/usr/bin/env bash
+  set -euo pipefail
+
+  export GIT_USER_EMAIL=$(gopass show -o setup/$DOT_ENV/git-config-user-email)
+  export GIT_USER_SIGNINGKEY=$(gopass show -o setup/$DOT_ENV/git-config-user-signingkey)
+  envsubst < templates/.gitconfig > ~/.gitconfig
 
 # install all base packages
 install-base-packages:

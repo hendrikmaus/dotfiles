@@ -13,8 +13,11 @@ cfg config.status.showUntrackedFiles no
 # assuming 'yay' is installed
 yay -S paru just
 
+# echo either "work" or "private" ito .env for just to load
+echo "DOT_ENV=work|private" > ~/.env
+
 just configure
-just install-base-packages
+just install
 
 # reboot
 ```
