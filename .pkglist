@@ -108,7 +108,7 @@ gopass-jsonapi-bin
 gparted
 gping
 grep
-gron-bin
+gron
 grub
 grub-theme-manjaro-dev
 gst-libav
@@ -300,7 +300,7 @@ speedtest-cli
 spotify-tui
 spotifyd
 starship
-stern-bin
+stern
 sublime-text-3
 subversion
 sudo
