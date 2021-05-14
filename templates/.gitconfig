@@ -1,0 +1,73 @@
+[alias]
+    s = status
+    c = commit
+    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    co = checkout
+
+    # verbose outputs
+    branches = branch -av
+    tags = tag -l
+    remotes = remote -v
+    unstage = reset -q HEAD --
+    discard = checkout --
+    uncommit = reset --mixed HEAD~
+    amend = commit --amend
+    nevermind = !git reset --hard HEAD && git clean -d -f
+    alias = config --get-regexp ^alias\\.
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+
+[color "diff"]
+    meta = 11
+    frag = magenta bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+
+[core]
+    editor = vim
+
+    # "cat" instead of paging if content fits onto one screen
+    #   and usage of diff-so-fancy
+    pager = diff-so-fancy | less --tabs=4 -RFX
+
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
+
+[apply]
+    whitespace = nowarn
+
+[mergetool]
+    keepBackup = false
+
+[help]
+    autocorrect = 1
+
+[push]
+    default = simple
+
+[user]
+    name = Hendrik Maus
+    email = $GIT_USER_EMAIL 
+    signingKey = $GIT_USER_SIGNINGKEY
+
+[commit]
+    gpgsign = true
+
+[pull]
+    rebase = false
+
+[init]
+    defaultBranch = master
