@@ -222,10 +222,8 @@ alias ssh='TERM=xterm-256color ssh'
 export PATH="$HOME/.bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.sdkman/candidates/java/current/bin:$PATH"
-export PATH="$HOME/.pyenv/versions/3.8.2/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.krew/bin:$PATH"
-export PATH="$HOME/.istioctl/bin:$PATH"
 export PATH="$HOME/Development/scripts:$PATH"
 
 # -----------------------------------------------------------------------------
