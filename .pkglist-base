@@ -42,3 +42,5 @@ zsh-completions
 zsh-syntax-highlighting
 ranger
 rofi
+helm
+youtube-dl
