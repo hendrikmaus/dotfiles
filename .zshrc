@@ -29,6 +29,7 @@ incl() {
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export EDITOR=/usr/bin/vim
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
