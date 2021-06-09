@@ -226,6 +226,7 @@ export PATH="$HOME/.sdkman/candidates/java/current/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.krew/bin:$PATH"
 export PATH="$HOME/Development/scripts:$PATH"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # -----------------------------------------------------------------------------
 
