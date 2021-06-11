@@ -10,7 +10,7 @@ window:
     y: 3
 
 mouse:
-  url:
+  hints:
     launcher:
       program: vivaldi-stable
 
