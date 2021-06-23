@@ -97,9 +97,9 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+#workspace_auto_back_and_forth yes
+#bindsym $mod+b workspace back_and_forth
+#bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # move workspaces to different screens
 mode "move_workspace" {
@@ -114,7 +114,7 @@ mode "move_workspace" {
 bindsym $mod+o mode "move_workspace"
 
 # split orientation
-#bindsym $mod+dash split h;exec notify-send 'tile horizontally'
+bindsym $mod+b split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
