@@ -23,6 +23,74 @@ incl() {
   [ -f $1 ] && source $1
 }
 
+# git worktree helpers
+function git_add_worktree {
+  local branch="${1:-""}"
+  local origin="${2:-""}"
+
+  if [[ -z "${branch}" ]]; then
+    echo "branch (arg 1) has to be specified" >&2
+    return 1
+  fi
+
+  mkdir -p ".worktrees"
+
+  if [[ -z "${origin}" ]]; then
+    git worktree add ".worktrees/$(echo "${branch}" | tr '/' '_')" "${branch}"
+  else
+    git worktree add ".worktrees/$(echo "${branch}" | tr '/' '_')" "${origin}/${branch}"
+  fi
+
+  cd ".worktrees/$(echo "${branch}" | tr '/' '_')"
+}
+
+function git_remove_worktree {
+  local branch="${1:-""}"
+
+  if [[ -z "${branch}" ]]; then
+    echo "branch (arg 1) has to be specified" >&2
+    return 1
+  fi
+
+  git worktree remove ".worktrees/$(echo "${branch}" | tr '/' '_')"
+}
+
+function workbranch {
+  local branch="${1:-""}"
+
+  if [[ -z "${branch}" ]]; then
+    echo "please specifiy branch (arg1)" >&2
+    return 1
+  fi
+
+  local cleaned_branch="$(echo "${branch}" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')"
+
+  git branch "${cleaned_branch}"
+
+  git_add_worktree "${cleaned_branch}"
+}
+
+function workbranch_remove {
+  local branch="${1:-""}"
+
+  if [[ -z "${branch}" ]]; then
+    echo "please specifiy branch (arg1)" >&2
+    return 1
+  fi
+
+  git_remove_worktree "${branch}"
+
+  git branch -D "${branch}"
+
+  if ask_and_check_yes_no "Do you want to delete the branch from the remote" "N"; then
+    echo "Deleting branch from remote"
+    git push origin --delete "${branch}"
+  else
+    echo "Not deleting branch from remote"
+  fi
+}
+
+
 # -----------------------------------------------------------------------------
 
 
