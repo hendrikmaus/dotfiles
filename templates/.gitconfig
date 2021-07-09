@@ -42,6 +42,8 @@
     #   and usage of diff-so-fancy
     pager = diff-so-fancy | less --tabs=4 -RFX
 
+    excludesfile = ~/.gitignore_global
+
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
